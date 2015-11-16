@@ -43,7 +43,6 @@ public class DankFrame {
 		window.show();
 		window.setOnCloseRequest(e -> {
 			run = false;
-			System.out.println("test");
 			try {
 				PrintWriter pw = new PrintWriter("dankMemes.txt");
 				pw.println(current);
@@ -54,13 +53,8 @@ public class DankFrame {
 		});
 		Task<Void> task = new Task<Void>() {
 		    @Override protected Void call() throws Exception {
-		    	int i = 0;
 		        while(run) {
-		        	current += dank.charAt(i);
-		        	i++;
-		        	if(i >= dank.length()) {
-		        		i = 0;
-		        	}
+		        	current += dank;
 		        	textArea.setText(current);
 		        	textArea.setScrollTop(Double.MAX_VALUE);
 			        Thread.sleep(50);
