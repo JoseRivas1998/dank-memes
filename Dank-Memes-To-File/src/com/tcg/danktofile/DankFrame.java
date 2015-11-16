@@ -36,9 +36,9 @@ public class DankFrame {
 		
 		Scene scene = new Scene(pane);
 		window.setScene(scene);
-		window.setMinWidth(200);
+		window.setMinWidth(250);
 		window.setMinHeight(200);
-		window.setWidth(200);
+		window.setWidth(250);
 		window.setHeight(200);
 		window.show();
 		window.setOnCloseRequest(e -> {
@@ -53,10 +53,10 @@ public class DankFrame {
 		});
 		Task<Void> task = new Task<Void>() {
 		    @Override protected Void call() throws Exception {
+		    	int r = 0;
 		        while(run) {
-		        	for(int i = 0; i < 100; i++) {
-			        	current += dank;
-		        	}
+	        		r++;
+		        	current += r + " " + dank;
 		        	textArea.setText(current);
 		        	textArea.setScrollTop(Double.MAX_VALUE);
 			        Thread.sleep(50);
