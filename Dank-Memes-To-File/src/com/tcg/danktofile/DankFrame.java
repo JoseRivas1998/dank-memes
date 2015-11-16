@@ -54,7 +54,9 @@ public class DankFrame {
 		Task<Void> task = new Task<Void>() {
 		    @Override protected Void call() throws Exception {
 		        while(run) {
-		        	current += dank;
+		        	for(int i = 0; i < 100; i++) {
+			        	current += dank;
+		        	}
 		        	textArea.setText(current);
 		        	textArea.setScrollTop(Double.MAX_VALUE);
 			        Thread.sleep(50);
